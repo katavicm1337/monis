@@ -76,7 +76,9 @@ window.addEventListener('DOMContentLoaded', () => {
   init();
 })
 
-function hamburgerMenu() {
-        const menu = document.getElementById("navcontainer");
-        menu.classList.toggle("active");
-}
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});

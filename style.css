@@ -15,51 +15,51 @@ body {
 }
 
 .nav {
-    width: 100vw;
-    background-color:#FAF9F6;
-    height: 10vh;
-    position: sticky;
-    top: 0;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
+    padding: 15px 20px;
+    background-color: #FAF9F6;
+    position: sticky;
+    z-index: 10;  
+    top: 0;
+
 }
 
-.nav .navcontainer {
-    flex: 1; 
-    justify-content: center; 
-    gap: 50px;
-}
-
-.nav #logo {
-    flex: 1; 
-    display: flex; 
+.nav-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.nav a {
-    text-decoration: none;
+#logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
     color: black;
-    font-family: "Huninn", sans-serif;
-    margin: 25px;
-    transition: .3s;
+    text-decoration: none;
+    font-size: 1em;
 }
 
-.nav a:hover {
-    color:darkgrey;
-    transition: .3s;
-}
-
-.nav img {
-    width: 64px;
-    height: auto;
-}
-
-
-#hamburgermenu {
+.hamburger {
     display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: black;
 }
 
 .hero {
@@ -283,51 +283,29 @@ button:hover {
 }
 
 
-@media screen and (max-width: 768px) {
-    .uslugecontainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .usluga {
-        width: 128px;
-        height: auto;
-    }
-
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        padding: 10px 20px;
-    }
-
-    #logo {
-        align-self: center;
-        padding-bottom: 10px;
-    }
-
-    #hamburgermenu {
-        display: block;
-        font-size: 28px;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        cursor: pointer;
-    }
-
-    .navcontainer {
+@media (max-width: 768px) {
+    .nav-links {
         display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #333;
         flex-direction: column;
-        width: 100%;
-        background-color: #FAF9F6;
-        padding-left: 20px;
-        gap: 20px;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000;
     }
 
-    .navcontainer a {
-        margin: 10px 0;
+    .nav-links.show {
+        display: flex;
     }
-}
 
-.navcontainer.active {
-    display: flex !important;
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-section.middle {
+        justify-content: flex-end;
+    }
 }
